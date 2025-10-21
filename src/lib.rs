@@ -110,7 +110,8 @@ pub struct statx {
 
     // 0x90
     /// Spare space for future expansion
-    __spare2: [u64; 14],
+    pub stx_mnt_id: u64,
+    __spare2: [u64; 13],
     // 0x100
 }
 
@@ -143,6 +144,7 @@ pub const STATX_SIZE: c_uint = 0x0000_0200;
 pub const STATX_BLOCKS: c_uint = 0x0000_0400;
 pub const STATX_BASIC_STATS: c_uint = 0x0000_07ff;
 pub const STATX_BTIME: c_uint = 0x0000_0800;
+pub const STATX_MNT_ID: c_uint = 0x0000_1000;
 pub const STATX_ALL: c_uint = 0x0000_0fff;
 pub const STATX__RESERVED: c_uint = 0x8000_0000;
 
